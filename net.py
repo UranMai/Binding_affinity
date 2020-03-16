@@ -1,4 +1,4 @@
-"""import torch
+import torch
 print(torch.__version__)
 torch.cuda.is_available()
 from torch.nn import Sequential as Seq, Linear, ReLU
@@ -6,8 +6,8 @@ from torch_geometric.nn import MessagePassing
 from torch_geometric.utils import remove_self_loops
 from torch_geometric.utils import add_self_loops
 from torch_geometric.data import Data, DataLoader
-import mpnn.py
-from mpnn.py import mol2graph
+import features.py
+from features.py import mol2graph
 
 import torch
 import torch.nn.functional as F
@@ -16,7 +16,7 @@ from torch.nn import Sequential, Linear, ReLU, GRU
 import torch_geometric.transforms as T
 from torch_geometric.nn import NNConv, Set2Set #NNConv (implemented MPNN); Set2Set 
 from torch_geometric.data import DataLoader
-from torch_geometric.utils import remove_self_loops"""
+from torch_geometric.utils import remove_self_loops
 
 
 
