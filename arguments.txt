@@ -1,0 +1,6 @@
+--train=train_data.csv
+--test=test_data.csv
+--lr=0.0005
+--epochs=10
+--dim=64
+--aggr=mean
