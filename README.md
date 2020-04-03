@@ -18,3 +18,8 @@ Drug design, Machine learning, MPNN
   python3 -m pip install torch-spline-conv==latest+cu101 -f https://pytorch-geometric.com/whl/torch-1.4.0.html
   python3 -m pip install torch-geometric
   ```
+# Execution
+```
+python data_prep.py -d data.csv -s sampling -t train_size
+python model.py @arguments.txt >> result.txt
+```
