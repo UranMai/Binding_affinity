@@ -28,3 +28,9 @@ Create log and pdbqt output and run the best affinities to results.txt
 ```
 bash smina.sh
 ```
+
+Dock the sdf file of molecules
+```
+smina.static --config conf.txt --receptor receptor.pdbqt -l ligans.sdf --out results.sdf --log results.log
+python3 print_results.py results.sdf
+```
