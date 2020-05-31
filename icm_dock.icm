@@ -1,0 +1,41 @@
+#!/home/uran/icm-3.9-1b/icm -s
+
+call _startup
+l_confirm=yes 
+#overwrite the contents of an existing file
+
+read pdb "1hvc.pdb"
+#OR read from sys ls
+#read sys ls -v RECEPTOR_*
+proj_name="mydock"
+
+#assign project
+dockUpdateGlobals proj_name -1
+
+#rs=a_/numbers_of_residues
+rs=a_/25a,85a
+#show rs
+
+delete a_!1
+
+#convert into icm object /delete water/optimize hydrogens/replace/display
+convertObject a_* yes yes yes no
+
+
+
+dock2SetupReceptor proj_name a_1. rs no "none"
+
+
+s_out=currentDockProj.data[1]+"_rec"
+set object a_$s_out.
+
+currentDockProj.l_readyMaps=no
+
+#calculate maps (default 0.5 4.0 no)
+dock5CalcMaps currentDockProj.data[1] 0.5 4.0 no
+#dock5CalcMaps currentDockProj.data[1] 0.5 4.0 no
+currentDockProj.data[8]="yes"
+
+quit
+
+
